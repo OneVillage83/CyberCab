@@ -17,6 +17,23 @@ The business layers are currently modeled as:
 
 The long-term physical network is intended to use Sacramento as the first full-service hub, with progressively lighter depots/nodes along important regional corridors as autonomous intercity operation becomes feasible.
 
+## Investor / capitalization baseline
+
+The first investor-facing portfolio is now documented at [`docs/investor/CYBERCAB_INVESTOR_PORTFOLIO_PROPOSAL_2026-09-04.md`](docs/investor/CYBERCAB_INVESTOR_PORTFOLIO_PROPOSAL_2026-09-04.md).
+
+Current seed-pilot planning recommendation:
+
+- **recommended initial capital raise:** `$150,000`;
+- **vehicle purchases:** intentionally excluded from the seed budget;
+- **pilot property:** roughly `10,000–15,000 SF` fenced paved/concrete industrial yard;
+- **initial charging:** `0–2` Level 2 positions with documented expansion path;
+- **illustrative managed-service break-even:** approximately `20` managed vehicles under the current base assumptions;
+- **Year-1 target:** `20–30` managed vehicles;
+- **future growth-facility capital:** approximately `$250k–$400k`, only after contracts justify a larger hub;
+- **fleet asset capital:** separate / TBD after actual Cybercab pricing, financing, network rules, and vehicle cash yields are observable.
+
+The $150k recommendation is a planning baseline, not a securities offering or contractor quote. Pricing, insurance, electrical work, property terms, and customer willingness-to-pay remain validation items.
+
 ## Physical startup thesis
 
 P0.20A establishes a current Sacramento physical-cost baseline.
@@ -38,7 +55,7 @@ Fenced paved / concrete yard
 
 Do not build a permanent wash rack or install a large DC fast-charging bank until real fleet throughput and Cybercab charging requirements justify them.
 
-Current research models a properly reserved lean yard-only launch at roughly **$50,000–$80,000 available startup cash** when the selected property does not require major electrical, sewer, or civil work. This is a planning target, not a contractor quote.
+Current research models a properly reserved lean yard-only launch at roughly **$50,000–$80,000 available startup cash** when the selected property does not require major electrical, sewer, or civil work. The broader investor proposal recommends **$150,000** so the operating company also has working capital, compliance/insurance reserves, software/telemetry funding, security/site IT, and contingency rather than launching at the physical minimum.
 
 ## Software architecture
 
@@ -93,6 +110,7 @@ Current Phase 0 work includes:
 - customer/service model
 - Sacramento facility and property strategy
 - Sacramento startup-cost and property archetype research
+- investor capitalization / use-of-funds baseline
 - charging/site-energy architecture
 - manual-to-automated wash transition
 - Tesla integration contract
@@ -128,6 +146,7 @@ See [`docs/DOCUMENTATION_POLICY.md`](docs/DOCUMENTATION_POLICY.md) and [`docs/PR
 - **Tesla integration:** P0.10A is a freeze candidate; Cybercab-specific capabilities remain explicit external gates
 - **CabOps core contracts:** P0.10B is a freeze candidate pending implementation proof gates
 - **Physical startup model:** P0.20A is a research baseline; paved/concrete yard-only pilot is a freeze candidate subject to property-specific gates
+- **Investor baseline:** initial portfolio completed; current recommended seed pilot is `$150,000`, excluding vehicle purchases
 - **Next software pass:** P0.10C — CabEnergy Deterministic Constraint & Scheduling Contract
 - **Next physical pass:** P0.20B — Sacramento Property Screening & Utility Preflight
 
@@ -139,6 +158,8 @@ README.md
 docs/
   DOCUMENTATION_POLICY.md
   PROJECT_LOG.md
+  investor/
+    CYBERCAB_INVESTOR_PORTFOLIO_PROPOSAL_2026-09-04.md
   phase-0/
     PHASE_0_OVERVIEW.md
     PHASE_0_STATUS.md
