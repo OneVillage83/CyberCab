@@ -17,6 +17,29 @@ The business layers are currently modeled as:
 
 The long-term physical network is intended to use Sacramento as the first full-service hub, with progressively lighter depots/nodes along important regional corridors as autonomous intercity operation becomes feasible.
 
+## Physical startup thesis
+
+P0.20A establishes a current Sacramento physical-cost baseline.
+
+The preferred first physical pilot is **not** a purpose-built car wash or a one-acre depot. A **roughly 10,000–15,000 SF fenced paved/concrete industrial yard** can be sufficient if zoning/use, washwater disposal, water, electrical capacity, access, landlord approvals, and insurance all pass preflight.
+
+Initial physical strategy:
+
+```text
+Fenced paved / concrete yard
+        |
+        +-- portable compliant washwater containment
+        +-- commercial manual wash/detail equipment
+        +-- secure equipment storage
+        +-- cameras / lighting / access control
+        +-- 0–2 Level 2 chargers initially
+        +-- future EVSE stub-outs / expansion path
+```
+
+Do not build a permanent wash rack or install a large DC fast-charging bank until real fleet throughput and Cybercab charging requirements justify them.
+
+Current research models a properly reserved lean yard-only launch at roughly **$50,000–$80,000 available startup cash** when the selected property does not require major electrical, sewer, or civil work. This is a planning target, not a contractor quote.
+
 ## Software architecture
 
 CyberCab's software is designed to be provider-neutral.
@@ -69,6 +92,7 @@ Current Phase 0 work includes:
 
 - customer/service model
 - Sacramento facility and property strategy
+- Sacramento startup-cost and property archetype research
 - charging/site-energy architecture
 - manual-to-automated wash transition
 - Tesla integration contract
@@ -103,7 +127,9 @@ See [`docs/DOCUMENTATION_POLICY.md`](docs/DOCUMENTATION_POLICY.md) and [`docs/PR
 - **Backup/expansion geography:** surrounding Sacramento region first; Northern California nodes later
 - **Tesla integration:** P0.10A is a freeze candidate; Cybercab-specific capabilities remain explicit external gates
 - **CabOps core contracts:** P0.10B is a freeze candidate pending implementation proof gates
-- **Next architecture pass:** P0.10C — CabEnergy Deterministic Constraint & Scheduling Contract
+- **Physical startup model:** P0.20A is a research baseline; paved/concrete yard-only pilot is a freeze candidate subject to property-specific gates
+- **Next software pass:** P0.10C — CabEnergy Deterministic Constraint & Scheduling Contract
+- **Next physical pass:** P0.20B — Sacramento Property Screening & Utility Preflight
 
 ## Repository map
 
@@ -118,6 +144,7 @@ docs/
     PHASE_0_STATUS.md
     P0_10A_TESLA_INTEGRATION_CONTRACT.md
     P0_10B_CABOPS_CORE_DOMAIN_EVENT_CONTRACTS.md
+    P0_20A_SACRAMENTO_STARTUP_COST_PROPERTY_MODEL.md
 ```
 
 ---
