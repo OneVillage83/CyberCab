@@ -2,7 +2,7 @@
 
 CyberCab is the working repository for **CyberCab Detail + Cab**, a Sacramento-first autonomous-vehicle operations and infrastructure business designed to make robotaxi ownership as passive as possible.
 
-The project is intentionally broader than detailing. The long-term product is a **turnkey robotaxi depot and fleet-operations platform** combining physical infrastructure, recurring fleet services, software, energy optimization, inspection/vision, maintenance orchestration, and eventually an owned autonomous fleet.
+The project is intentionally broader than detailing. The long-term product is a **turnkey robotaxi depot and fleet-operations platform** combining physical infrastructure, recurring fleet services, software, energy optimization, inspection/vision, maintenance orchestration, incident handling, owner economics, and eventually an owned autonomous fleet.
 
 ## Core thesis
 
@@ -25,22 +25,41 @@ CyberCab's software is designed to be provider-neutral.
 NexusOS
    |
    v
-CabOps API
+CabOps API / Core Contracts
    |
+   +-- Fleet Registry
+   +-- CabDispatch
    +-- CabEnergy
-   +-- CabMaint
    +-- CabRoute
-   +-- CabVision
    +-- CabDepot
+   +-- CabVision
+   +-- CabCare
+   +-- CabIncident
+   +-- CabMaint
    +-- CabRevenue
    |
    v
-Provider adapters
+Provider / resource adapters
    +-- TeslaAdapter
-   +-- Future AV providers
+   +-- Simulator adapters
+   +-- Future AV / EVSE / site-energy providers
 ```
 
 Tesla software and APIs are treated as provider integrations rather than the core architecture. CabOps owns the operational intelligence; NexusOS supplies higher-level orchestration across One Village systems.
+
+### Core contract rules
+
+P0.10B now defines the provider-neutral internal language of CabOps:
+
+- tenant, owner, manager, payer, provider account, and vehicle are separate identities;
+- provider/raw signals, canonical observations, domain events, commands, plans, projections, and audit records are distinct concepts;
+- current vehicle state is multi-dimensional rather than one giant mutable status;
+- readiness is derived with explicit reason codes;
+- commands are durable and move through request -> validation -> provider acknowledgement -> independent effect verification;
+- event delivery is treated as at-least-once, requiring idempotent consumers;
+- out-of-order/duplicate telemetry must not regress current state;
+- provider capability is negotiated explicitly rather than inferred from vehicle model names;
+- simulator and real providers use the same contracts.
 
 ## Phase 0 objective
 
@@ -53,6 +72,7 @@ Current Phase 0 work includes:
 - charging/site-energy architecture
 - manual-to-automated wash transition
 - Tesla integration contract
+- provider-neutral domain/event/command contracts
 - fleet telemetry and command architecture
 - Cybercab capability gate tracking
 - owner economics and pricing
@@ -81,8 +101,9 @@ See [`docs/DOCUMENTATION_POLICY.md`](docs/DOCUMENTATION_POLICY.md) and [`docs/PR
 - **Phase:** P0 — Production architecture and feasibility
 - **Primary geography:** Sacramento, California
 - **Backup/expansion geography:** surrounding Sacramento region first; Northern California nodes later
-- **Tesla integration:** P0.10A documented; core integration architecture is a freeze candidate
-- **Next architecture pass:** P0.10B — CabOps Core Domain & Event Contracts
+- **Tesla integration:** P0.10A is a freeze candidate; Cybercab-specific capabilities remain explicit external gates
+- **CabOps core contracts:** P0.10B is a freeze candidate pending implementation proof gates
+- **Next architecture pass:** P0.10C — CabEnergy Deterministic Constraint & Scheduling Contract
 
 ## Repository map
 
@@ -96,6 +117,7 @@ docs/
     PHASE_0_OVERVIEW.md
     PHASE_0_STATUS.md
     P0_10A_TESLA_INTEGRATION_CONTRACT.md
+    P0_10B_CABOPS_CORE_DOMAIN_EVENT_CONTRACTS.md
 ```
 
 ---
