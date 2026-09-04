@@ -174,3 +174,52 @@ This file is the durable chronological record for material CyberCab decisions an
 **Affected docs/code:**
 - `README.md`
 - `docs/phase-0/PHASE_0_STATUS.md`
+
+---
+
+## 2026-09-04 — CabOps core domain/event contract documented as P0.10B
+
+**Area:** architecture / domain model / eventing / tenancy / reliability
+
+**Changed:**
+- Defined the core CabOps bounded contexts and their authoritative responsibilities.
+- Formalized `CabCare` and `CabIncident` as first-class software domains.
+- Separated tenant, owner, manager, payer, provider account, and vehicle identity.
+- Adopted effective-dated vehicle management assignments so ownership/management changes preserve historical tenancy boundaries.
+- Separated provider/raw signals, canonical observations, domain events, commands, operational plans, projections, and audit records.
+- Rejected a single giant vehicle-status enum in favor of multi-dimensional lifecycle/connectivity/presence/dispatch/care/maintenance/energy/readiness state.
+- Defined readiness requirements as CabDispatch-owned inputs consumed by CabEnergy/CabCare/CabMaint/CabDepot.
+- Required durable operational plans and reason-coded decisions for explainability.
+- Defined command lifecycle through request, validation, dispatch, provider acknowledgement, and independent effect confirmation.
+- Adopted at-least-once delivery assumptions, idempotent consumers, and transactional outbox/inbox semantics or equivalent guarantees.
+- Defined event-time-aware handling of duplicate and out-of-order telemetry.
+- Added explicit capability negotiation so core logic asks for capabilities rather than inferring behavior from model names.
+- Defined depot visits as containers for parallel jobs/resource reservations rather than one serial mega-state-machine.
+- Added shared work-order, inspection-finding, incident, maintenance-restriction, resource-reservation, failure, dead-letter, operator-override, schema-versioning, replay, and audit contracts.
+- Required real and simulated providers to use the same canonical contracts.
+
+**Reason:**
+- Production fleet operations will combine noisy external telemetry, physical facility state, multiple owners/managers, autonomous decisions, provider commands, human exceptions, and later simulation/ML.
+- Without stable authority/event/command semantics, individual modules would become tightly coupled and future provider changes could force core redesign.
+
+**Freeze decision:**
+- P0.10B is a **FREEZE CANDIDATE**, not yet fully frozen.
+
+**Implementation proof gates before `FROZEN`:**
+- prove out-of-order telemetry cannot regress current state;
+- prove duplicate events/commands are harmless under retry;
+- prove provider acknowledgement and physical effect are reconciled separately;
+- prove ownership/management reassignment does not leak historical tenant data;
+- prove simulator and a real provider adapter drive the same workflows;
+- prove charging and cleaning can overlap within one depot visit;
+- prove blocking incidents/maintenance restrictions reliably remove readiness;
+- prove deterministic projection replay under the selected persistence model.
+
+**Open gates / follow-up:**
+- Continue to **P0.10C — CabEnergy Deterministic Constraint & Scheduling Contract**.
+- Do not select optimization/ML techniques until the deterministic feasible scheduling problem is defined.
+
+**Affected docs/code:**
+- `docs/phase-0/P0_10B_CABOPS_CORE_DOMAIN_EVENT_CONTRACTS.md`
+- `docs/phase-0/PHASE_0_STATUS.md`
+- `README.md`
