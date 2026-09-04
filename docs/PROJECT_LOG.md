@@ -223,3 +223,47 @@ This file is the durable chronological record for material CyberCab decisions an
 - `docs/phase-0/P0_10B_CABOPS_CORE_DOMAIN_EVENT_CONTRACTS.md`
 - `docs/phase-0/PHASE_0_STATUS.md`
 - `README.md`
+
+---
+
+## 2026-09-04 — Sacramento startup cost and property model documented as P0.20A
+
+**Area:** facility / real estate / startup capital / washwater / charging / compliance
+
+**Changed:**
+- Completed a current Sacramento-area physical startup cost and property deep dive using live September 2026 industrial listings and current regulatory/vendor benchmarks.
+- Formalized seven property archetypes from yard-only IOS through mature existing fleet-service facilities.
+- Identified a roughly **10,000–15,000 SF fenced paved/concrete industrial yard** as a viable first physical pilot archetype when zoning/use, washwater, water, power, landlord, access, and insurance gates pass.
+- Documented a current Rancho Cordova IOS asking-rate benchmark of approximately **$0.16–$0.22/SF/month**.
+- Added current building+yard Sacramento references at approximately $3,450/month, $7,185/month, and $15,000/month depending scale and facilities.
+- Documented that Sacramento County recognizes portable washwater-containment/capture methods, allowing a compliant startup path without immediately constructing a permanent wash rack.
+- Added current commercial wash/detail equipment planning costs and warned that a newly constructed permanent industrial wash bay can become a six-figure project.
+- Added Tesla commercial Level 2 installed-cost guidance and current SMUD commercial EV incentives.
+- Added a hard pre-lease requirement to evaluate electrical capacity, including SMUD Grid Capacity Evaluation for serious SMUD-territory candidates.
+- Added California car-wash registration / bond planning inputs, local business-license references, and garagekeepers/insurance planning requirements.
+- Added startup cash scenarios for yard-only, small building+yard, scalable depot, and permanent-wash cases.
+- Adopted **lease first** as the startup real-estate strategy; bare-land development is not the default first-depot path.
+- Added a 100-point property scoring model and automatic rejection gates.
+
+**Reason:**
+- Rent alone does not determine depot economics. Power, wastewater, zoning, insurance, and avoided tenant improvements can dominate the true cost of a site.
+- A paved yard lets the company validate CabOps, CabEnergy, cleaning, inspection, customer custody, and fleet flow at much lower fixed cost than immediately leasing/building a mature hub.
+
+**Current planning conclusion:**
+- A properly reserved lean yard-only pilot is modeled around **roughly $50,000–$80,000 available startup cash** if major electrical, sewer, or civil construction is not required.
+- A small building + useful yard moves the practical target toward roughly **$85,000–$125,000** under similarly favorable infrastructure conditions.
+- A 0.75–1.25 acre scalable depot can require roughly **$134,000–$335,000** before a new permanent wash bay.
+- A newly constructed permanent wash bay can add approximately **$85,000–$200,000+** based on current industrial construction benchmarks, so it is not part of the preferred startup architecture.
+
+**Open gates / follow-up:**
+- Continue physical workstream with **P0.20B — Sacramento Property Screening & Utility Preflight**.
+- Obtain broker quotes for current paved-yard candidates.
+- Confirm land use, washwater/sewer path, landlord improvement rights, and actual utility capacity address by address.
+- Obtain garagekeepers/garage liability quotes based on 10/25/50/100 customer vehicles.
+- Obtain commercial EVSE ROM quotes and SMUD capacity evaluations for serious candidates.
+- Build 10/25/50 vehicle layouts against actual parcel geometry.
+
+**Affected docs/code:**
+- `docs/phase-0/P0_20A_SACRAMENTO_STARTUP_COST_PROPERTY_MODEL.md`
+- `docs/phase-0/PHASE_0_STATUS.md`
+- `README.md`
