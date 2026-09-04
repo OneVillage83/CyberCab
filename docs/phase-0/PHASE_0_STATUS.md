@@ -22,12 +22,12 @@ This file tracks whether each Phase 0 area is concept-only, actively being desig
 | P0.11 | CabVision privacy architecture | ACTIVE DESIGN | Minimal-retention principle accepted; exact evidence/retention policies remain open. |
 | P0.12 | CabRoute / network optimization | ACTIVE DESIGN | Provider-neutral route/node logic planned; autonomous reposition is Cybercab/provider gated. |
 | P0.13 | Intercity capability model | EXTERNALLY GATED | Software should support LOCAL_ONLY / MULTI_ZONE / INTERCITY without assuming availability. |
-| P0.14 | Owner economics simulator | NOT STARTED | Required before final pricing and large property commitments. P0.20A supplies initial property/capex inputs. |
-| P0.15 | Pricing architecture | ACTIVE DESIGN | Candidate fixed/revenue-share/hybrid structures exist; must be validated. |
-| P0.16 | Customer discovery | NOT STARTED | Garrett profile is hypothesis seed; need broader interviews/LOIs. |
+| P0.14 | Owner economics simulator | INITIAL BASELINE | Investor proposal now supplies a first 3-year service-company model and break-even sensitivity; full configurable owner/fleet simulator remains to be built. |
+| P0.15 | Pricing architecture | ACTIVE VALIDATION | Investor proposal establishes initial validation ranges: CabCare $249-$349, CabDepot $549-$749, CabOps $799-$1,099 per vehicle/month plus activation, incident and electricity models. Customer discovery must validate these. |
+| P0.16 | Customer discovery | NOT STARTED | Garrett profile is hypothesis seed; investor plan requires 15-25 structured interviews and LOIs/reservations. |
 | P0.17 | Facility de-risking gate | ACTIVE DESIGN | Principle accepted; P0.20A reinforces lease-first / demand-pulled facility strategy; exact committed-vehicle/MRR threshold remains open. |
 | P0.18 | Equipment acquisition ladder | FREEZE CANDIDATE | Stage-based acquisition concept accepted; P0.20A adds current manual equipment and permanent wash-bay cost baselines. |
-| P0.19 | Owned-fleet acquisition flywheel | ACTIVE DESIGN | Strategic principle accepted; treasury policy and reserve thresholds not frozen. |
+| P0.19 | Owned-fleet acquisition flywheel | ACTIVE DESIGN | Strategic principle accepted; treasury policy and reserve thresholds not frozen. Investor seed proposal intentionally excludes vehicle purchases. |
 | P0.20 | Physical Phase 0 deliverables | ACTIVE DESIGN | P0.20A starts the physical workstream with current Sacramento property, washwater, charging, compliance and startup-cost research. |
 | P0.20A | Sacramento Startup Cost & Property Model | RESEARCH BASELINE | Current listings and cost ranges documented. Paved/concrete yard-only pilot is a freeze candidate; broker/utility/sewer/land-use/insurance quotes remain required before site selection. |
 | P0.20B | Sacramento Property Screening & Utility Preflight | NEXT — PHYSICAL | Convert the P0.20A shortlist into address-specific zoning, sewer, water, SMUD GCE, landlord-improvement, insurance and broker-quote evidence. |
@@ -36,6 +36,7 @@ This file tracks whether each Phase 0 area is concept-only, actively being desig
 | P0.23 | Fleet simulator / digital twin | PLANNED | Must use the same observation/event/command contracts as production and support mixed real/simulated fleets. |
 | P0.24 | Phase 0 gate register | ACTIVE DESIGN | Tesla/Cybercab gates formalized in P0.10A; P0.10B adds implementation proof gates; P0.20A adds explicit property/power/washwater/insurance gates. |
 | P0.25 | Phase 0 completion criteria | FREEZE CANDIDATE | Unknowns must be resolved or isolated as explicit external gates without breaking core architecture. |
+| P0.26 | Investor Case & Seed Capital Model | RESEARCH BASELINE | Investor portfolio completed. Recommended seed pilot: $150k, excluding vehicle purchases; illustrative break-even ~20 managed vehicles; Year-1 target 20-30; larger facility capital only after demand proof. |
 
 ---
 
@@ -93,6 +94,24 @@ Key findings:
 - portable compliant washwater capture can defer a six-figure permanent wash-bay build;
 - SMUD Grid Capacity Evaluation should precede any long-term lease dependent on fleet charging;
 - a properly reserved lean yard-only startup is currently modeled around roughly $50k–$80k available cash when major utility/civil work is unnecessary.
+
+## P0.26 investor-case baseline
+
+See [`../investor/CYBERCAB_INVESTOR_PORTFOLIO_PROPOSAL_2026-09-04.md`](../investor/CYBERCAB_INVESTOR_PORTFOLIO_PROPOSAL_2026-09-04.md).
+
+Current investor-planning baseline:
+
+- recommended seed pilot: **$150,000**;
+- seed use of funds includes facility reserve, manual wash/detail/recovery equipment, charging/electrical preflight, insurance/legal/licensing/surety premium, security/site IT, CabOps/Tesla integration, labor/onboarding runway and contingency;
+- no Cybercab/AV vehicle purchases in the seed budget;
+- weighted Year-1 service ARPU assumption: **$775/month**;
+- direct vehicle servicing cost assumption: **$225/month**;
+- fixed pilot operating cost assumption: approximately **$11,000/month**;
+- illustrative break-even: approximately **20 managed vehicles**;
+- Year-1 target: **20-30 managed vehicles**;
+- Year-3 illustrative target: **100 managed vehicles**, representing approximately **$1.02M annual recurring service revenue** at $850/month before pass-through energy, incident revenue, future revenue share, software licensing, or owned-fleet income;
+- later growth-facility capitalization estimate: **$250k-$400k**, only after contracted demand justifies the step-up;
+- customer pricing and all financial outputs remain validation assumptions, not guaranteed results.
 
 ## Current external Tesla/Cybercab gates
 
